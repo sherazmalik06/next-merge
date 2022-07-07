@@ -50,8 +50,7 @@ type getMergeRequestPostsProps = {
   merge_id,
 };
 
-export const getMergeRequestPosts = async (props: getMergeRequestPostsProps) => {
-  const { merge_id } = props;
+export const getMergeRequestPosts = async (merge_id: string) => {
   const merge_api_url = `${COSMIC_API_URL}/v2/buckets/${BUCKET_SLUG}/merge-requests/${merge_id}/objects?read_key=${READ_KEY}&pretty=true&props=slug,title,content,metadata,created_at,type_slug`;
   const data = await fetch(merge_api_url)
     .then(response => response.json());

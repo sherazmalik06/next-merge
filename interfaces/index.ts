@@ -13,6 +13,7 @@ export type Author = {
 export type Post = {
   title: string;
   slug: string;
+  type_slug: string;
   content: string;
   created_at: string;
   metadata: {
